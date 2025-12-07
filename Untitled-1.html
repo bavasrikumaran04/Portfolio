@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bavasrikumaran M | Portfolio</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ANIMATIONS */
+@keyframes fadeUp {
+    0% {opacity: 0; transform: translateY(40px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0);}
+}
+
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+section {
+    padding: 90px 10%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    background: rgba(0,0,0,0.65);
+    padding: 20px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(15px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #fff;
+}
+
+nav a {
+    color: #00eaff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* HERO */
+.hero-section {
+    height: 100vh;
+    text-align: center;
+    padding-top: 140px;
+    background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    position: relative;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.2s ease;
+}
+
+.profile-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #00eaff;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.hero-section h1 {
+    font-size: 3.2rem;
+    color: white;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: linear-gradient(45deg, #00eaff, #0088ff);
+    color: #000;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECTION BACKGROUNDS – programmer themed */
+#about {
+    background: url("https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+}
+
+#academic {
+    background: url("https://images.unsplash.com/photo-1537432376769-00e5c4e57352?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+}
+
+#skills {
+    background: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+}
+
+#projects {
+    background: url("https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+}
+
+#certificates {
+    background: url("https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+}
+
+#contact {
+    background: url("https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1600&q=80") center/cover fixed;
+}
+
+/* DARK OVERLAY FOR READABILITY (NOT HERO) */
+section:not(.hero-section)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 0;
+}
+
+section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* SKILLS */
+.skill-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-box span {
+    background: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 2px solid #00eaff;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.skill-box span:hover {
+    background: #00eaff;
+    color: #000;
+}
+
+/* PROJECTS & ACADEMIC */
+.project-card, .academic-card {
+    background: rgba(0,0,0,0.55);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #00eaff;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.project-card:hover, .academic-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card a {
+    color: #00eaff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* CERTIFICATES */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.certificate-card {
+    background: rgba(0,0,0,0.55);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.certificate-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact-box p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 15px;
+        font-size: 0.9rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+    }
+
+    section {
+        padding: 80px 7%;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav>
+        <h2>Bavasrikumaran M</h2>
+        <div>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#academic">Academics</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero-section">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+        <div class="profile-photo">
+            <img src="myphoto.jpg" alt="Bavasrikumaran M">
+        </div>
+        <h1>Hello, I'm <br><span style="color:#00eaff;">Bavasrikumaran M</span></h1>
+        <p>Engineering Student • Programmer • Innovator</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2><i class="fa-solid fa-user"></i> About Me</h2>
+    <p>
+        I am <strong>Bavasrikumaran M</strong>, a 19-year-old engineering student from Ramanathapuram.
+        I am passionate about programming, innovation, and problem-solving.
+    </p>
+    <br>
+    <p><strong>Date of Birth:</strong> 07-08-2006</p>
+    <p><strong>Age:</strong> 19</p>
+    <p><strong>Gender:</strong> Male</p>
+    <p><strong>Native:</strong> Ramanathapuram</p>
+</section>
+
+<!-- ACADEMIC DETAILS -->
+<section id="academic">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Academic Details</h2>
+
+    <div class="academic-card">
+        <h3>College</h3>
+        <p>Government College of Engineering, Salem – 11</p>
+        <p><strong>CGPA:</strong> 8.5</p>
+    </div>
+
+    <div class="academic-card">
+        <h3>School</h3>
+        <p>Syed Ammal Matriculation Higher Secondary School</p>
+        <p><strong>HSC Percentage:</strong> 94%</p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2><i class="fa-solid fa-code"></i> Skills</h2>
+    <div class="skill-box">
+        <span>C Programming</span>
+        <span>Python Programming</span>
+        <span>Team Leadership</span>
+        <span>Communication</span>
+        <span>Presentation Skills</span>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2><i class="fa-solid fa-folder-open"></i> Projects</h2>
+
+    <div class="project-card">
+        <h3>Smart India Hackathon</h3>
+        <p>Worked under the theme "Gamified Environmental Education".</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Hotel Room Booking System</h3>
+        <p>A functional and responsive booking system built using web technologies.</p>
+        <a href="https://bavasrikumaran04.github.io/Hotel-booking-system/" target="_blank">
+            ➤ View Project
+        </a>
+    </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+    <h2><i class="fa-solid fa-certificate"></i> Certificates</h2>
+
+    <div class="certificates-grid">
+        <div class="certificate-card">
+            <img src="certificate1.jpg" alt="Certificate 1">
+            <p>NPTEL CERTIFICATE FOR PYTHON</p>
+        </div>
+
+        <div class="certificate-card">
+            <img src="certificate2.jpg" alt="Certificate 2">
+            <p>SMART INDIA HACKATHON</p>
+        </div>
+
+        <!-- Add more certificates here -->
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+
+    <div class="contact-box">
+        <p><strong>Email:</strong> bavasrikumaran04@gmail.com</p>
+        <p><strong>Mobile:</strong> 8248433803</p>
+        <p><strong>GitHub:</strong> github.com/bavasrikumaran04</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Bavasrikumaran M. All rights reserved.
+</footer>
+
+</body>
+</html>
